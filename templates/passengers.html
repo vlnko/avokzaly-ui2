@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<aside>
+    <div class="page-card">
+        {% include 'parts/passengers/contacts.html' %}
+    </div>
+
+    <!-- #region Блок заполнения данных по 1 пассажиру -->
+    <div class="page-card">
+        {% include 'parts/passengers/passenger-form.html' %}
+    </div>
+    <!-- #endregion -->
+
+
+    <a href="#" class="btn-secondary" style="margin-bottom: 2rem;">Добавить пассажира</a>
+    
+
+    <div class="page-card">
+        <div class="checkbox-wrapper">
+            <label class="control control--checkbox">
+                Соглашаюсь на обработку моих персональных данных
+                <input type="checkbox" />
+                <div class="control__indicator pd"></div>
+            </label>
+        </div>
+        <div class="btn-group">
+            <span class="btn-primary"
+                _="on click add .input-error to .pd"
+            >Оплатить по СБП</span>
+            <a href="#" class="btn-secondary">Оплатить по карте</a>
+        </div>
+        <span class="sub-info">Нажимая кнопку "Оплатить" вы соглашаетесь с условиями и <a href="#">правилами сервиса</a>, а также с <a href="#">условиями страхования</a></span>
+    </div>
+</aside>
+
+{% include 'parts/passengers/order-details.html' %}
+
+{% endblock %}

@@ -1,0 +1,436 @@
+/* #region ОСНОВНЫЕ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --color-main: #157FEA;
+    --color-background: #F5F5F5;
+    --color-gray: rgb(180, 180, 200);
+    --color-light-blue: #DEF;
+    --color-light-blue2: rgb(183, 206, 230);
+    --color-red: rgb(255, 0, 70);
+    --color-light-red: rgb(255, 220, 230);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 2rem;
+    margin: 0;
+    background-color: var(--color-background);
+    font-family: "Roboto", sans-serif;
+}
+a {
+    color: var(--color-main);
+    text-decoration: none;
+}
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+aside {
+    flex: 2;
+    max-width: 67%;
+}
+.order-details {
+    background-color: white;
+    border-radius: 1.5rem;
+    flex: 1;
+    padding: 2rem;
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+    box-shadow: 0 1.5rem 1.5rem -1.5rem rgba(0,0,0,0.05);
+}
+/* #endregion */
+
+/* #region ИНФО О ЗАКАЗЕ */
+.hint {
+    font-size: .8rem;
+    color: var(--color-gray);
+    display: inline-block;
+    margin-bottom: 0.25rem;
+}
+.time {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.station::before {
+    content: "●";
+    color: var(--color-main);
+    margin-right: .25rem;
+    font-size: 1.25rem;
+}
+.schedule {
+    margin: 1.5rem 0;
+}
+.arrival {
+    text-align: right;
+}
+.total, .order-items .row, .schedule {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.order-items {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 1rem 0;
+}
+.total {
+    padding: 1rem 0 0;
+    margin-top: 1rem;
+    border-top: 1px solid var(--color-light-blue);
+}
+.order-details.collapsed > .schedule, .order-details.collapsed > .order-items, .order-details.collapsed > .total {
+    display: none;
+}
+.order-details svg {
+    cursor: pointer;
+    width: 1.5rem;
+    color: var(--color-gray);
+}
+.order-details.collapsed svg {
+    transform: rotate(180deg);
+}
+/* #endregion */
+
+/* #region СТРАНИЦА */
+.page-card {
+    padding: 2rem;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 1.5rem 1.5rem -1.5rem rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.page-card:not(:last-child) {
+    margin-bottom: 2rem;
+}
+.page-card h3 {
+    margin-bottom: 1rem;
+}
+.page-card h3:not(:first-child) {
+    margin-top: 2rem;
+}
+/* #endregion */
+
+/* #region КНОПКИ */
+.btn-group {
+    display: flex;
+    gap: .5rem;
+}
+.btn-primary {
+    text-decoration: none;
+    color: white;
+    background-color: var(--color-main);
+    padding: .5rem 1rem;
+    margin: 0;
+    border-radius: .5rem;
+    font-weight: 600;
+    box-sizing: border-box !important;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-secondary {
+    text-decoration: none;
+    color: var(--color-main);
+    background-color: var(--color-light-blue);
+    padding: .5rem 1rem;
+    margin: 0;
+    border-radius: .5rem;
+    font-weight: 600;
+    box-sizing: border-box !important;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-action-sm { 
+    border: 1px solid var(--color-main); 
+    color: var(--color-main); 
+    display: inline-flex; 
+    padding: .3rem .9rem .35rem; 
+    font-size: .8rem; 
+    width: fit-content; 
+    height: fit-content; 
+    border-radius: 1rem; 
+    font-weight: 500;
+    cursor: pointer; 
+} 
+.btn-action-sm.gray {
+    border: 1px solid rgba(0,0,0,.5); 
+    color: rgba(0,0,0,.5); 
+}
+.btn-cross { 
+    padding: .25rem 0 .35rem .6rem ; 
+    border: none; 
+    color: var(--color-gray);
+    cursor: pointer; 
+}
+.buttons {
+    border-left: 1px solid var(--color-light-blue);
+    padding-left: 1.5rem;
+}
+.buy-btn {
+    font-weight: 700;
+    font-size: .95rem;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    color: var(--color-main);
+    background-color: var(--color-light-blue);
+    padding: .8rem 1.6rem;
+    border-radius: .5rem;
+    display: inline-block;
+}
+.seats-left {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+    color: var(--color-gray);
+    margin-top: 0.5rem;
+}
+/* #endregion */
+
+/* #region ФОРМЫ */
+.form-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+.form-row:not(:last-child) {
+    margin-bottom: 1.2rem;
+}
+.form-col {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    flex: 1;
+    min-width: 0;
+}
+.input-label {
+    color: var(--color-gray);
+    font-size: .85rem;
+}
+.input-field {
+    border: 1px solid #e5e5e5;
+    background-color: #fafafa;
+    border-radius: .5rem;
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.input-field[type="date"] {
+    font-family: "Roboto";
+    font-weight: 400;
+    padding: .4rem .5rem;
+}
+.input-field:not(:placeholder-shown) {
+    background-color: white;
+}
+.input-field:focus {
+    border-color: white;
+    background-color: white;
+    outline: 2px solid var(--color-main);
+}
+::placeholder {
+    color: var(--color-gray);
+}
+input[type="checkbox"]:not(:last-child) {
+    margin-bottom: .5rem;
+}
+input[type="checkbox"]:last-child {
+    margin-bottom: 1rem;
+}
+.sub-info {
+    display: inline-block;
+    font-size: .9rem;
+    margin-top: 1rem;
+    color: var(--color-gray);
+}
+/* #endregion */
+
+/* #region ЧЕКБОКСЫ */
+.checkbox-wrapper .control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: .9rem;
+}
+.checkbox-wrapper:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.checkbox-wrapper .control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.checkbox-wrapper .control__indicator {
+    position: absolute;
+    top: -.1rem;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: var(--color-background);
+    outline: 2px solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+.checkbox-wrapper .control input:checked ~ .control__indicator {
+    background: var(--color-main);
+    outline: 2px solid white;
+}
+.checkbox-wrapper .control:hover input:not([disabled]):checked ~ .control__indicator,
+.checkbox-wrapper .control input:checked:focus ~ .control__indicator {
+    background: var(--color-main);
+}
+.checkbox-wrapper .control input:disabled ~ .control__indicator {
+    background: var(--color-gray);
+    opacity: 0.6;
+    pointer-events: none;
+}
+.checkbox-wrapper .control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+.checkbox-wrapper .control input:checked ~ .control__indicator:after {
+    display: block;
+}
+.checkbox-wrapper .control--checkbox .control__indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+label:has(input[type="checkbox"]) {
+    color: rgba(0,0,0,.7);
+    font-size: 1rem !important;
+}
+.input-error {
+    outline: 2px solid rgb(255, 0, 0, .7) !important;
+}
+/* #endregion */
+
+/* #region БЛОК СТРАХОВКИ */
+.insurance-block {
+    border: 1px solid #e5e5e5;
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 1rem;
+    font-size: .9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.insurance-block * {
+    height: 100%;
+    color: rgba(0,0,0,.7);
+}
+.items-center {
+    align-items: center;
+    flex-wrap: wrap;
+}
+.ins-logo {
+    height: 1.5rem;
+}
+.ins-status {
+    color: var(--color-main);
+}
+/* #endregion */
+
+/* #region ВСПОМОГАТЕЛЬНОЕ */
+.spacer1 {
+    height: 1rem;
+}
+.spacer2 {
+    height: 2rem;
+}
+.cols2 {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.cols2 div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+}
+.spacebetween {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* #endregion */
+
+/* #region АДАПТИВ */
+@media screen and (max-width: 1080px) {
+    .page-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    aside {
+        max-width: 100%;
+    }
+    .btn-group.heading {
+        flex-direction: row;
+    }
+    .order-details {
+        position: static;
+    }
+}
+@media screen and (max-width: 960px) {
+    .page-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+@media screen and (max-width: 720px) {
+    body {
+        padding: 1rem;
+    }
+    .btn-group {
+        flex-direction: column;
+        text-align: center;
+    }
+    .insurance-block {
+        padding: 1.5rem 2rem 2rem 2rem;
+        margin: 0 -2rem -2rem -2rem;
+        border: none;
+        border-top: 1px solid #e5e5e5;
+        border-radius: 0;
+    }
+    .trip-card {
+        flex-direction: column;
+    }
+    .buttons {
+        border-left: none;
+        padding-left: 0;
+    }
+    .arrival {
+        text-align: right;
+    }
+}
+@media screen and (max-width: 640px) {
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+/* #endregion */
