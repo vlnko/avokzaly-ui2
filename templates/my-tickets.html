@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="page-card">
+    <h2>Мои билеты</h2>
+    <div class="tabs">
+        <a href="#" class="selected">Предстоящие поездки</a>
+        <a href="#">Архивные поездки</a>
+    </div>
+    <div class="inner-card-group">
+        {% include 'parts/my-tickets/trip-card.html' %}
+        {% include 'parts/my-tickets/trip-card.html' %}
+        {% include 'parts/my-tickets/trip-card.html' %}
+        {% include 'parts/my-tickets/trip-card.html' %}
+    </div>
+</div>
+
+{% endblock %}

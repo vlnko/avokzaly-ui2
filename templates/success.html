@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<aside>
+    <div class="alert success"> <!-- Для отображения алерта с ошибкой меняем класс 'success' на 'error' -->
+        <h3>Ваши билеты успешно оформлены</h3>
+        <span>Распечатывать их не обязательно, посадка в автобус осуществляется по документу, удостоверяющему личность.</span>
+    </div>
+    <div class="page-card">
+        <h3>Пассажиры</h3>
+        <div class="inner-card-group">
+            <div class="inner-card">
+                <div>
+                    <h4>Иванов И.И.</h4>
+                    <span>Свид. о рожд. III-221100</span>
+                </div>
+                <div>
+                    <div class="btn-group">
+                        <a href="#" class="btn-secondary">Вернуть</a>
+                        <a href="#" class="btn-secondary">Скачать билет</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner-card">
+                <div>
+                    <h4>Иванов И.И.</h4>
+                    <span>Свид. о рожд. III-221100</span>
+                </div>
+                <div>
+                    <a href="#" class="pill gray">Возвращен</a>
+                </div>
+            </div>
+
+            <div class="inner-card">
+                <div>
+                    <h4>Иванов И.И.</h4>
+                    <span>Свид. о рожд. III-221100</span>
+                </div>
+                <div>
+                    <a href="#" class="pill red">Ошибка</a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Страховые полисы</h3>
+
+        <div class="inner-card">
+            <div>
+                <h4>Полис №110022</h4>
+            </div>
+            <div>
+                <a href="#" class="btn-secondary">Скачать полис</a>
+            </div>
+        </div>
+
+        <h3>Чеки</h3>
+
+        <div class="btn-group">
+            <a href="#" class="btn-secondary">Чек на билеты</a>
+            <a href="#" class="btn-secondary">Чек на страховые полисы</a>
+            <a href="#" class="btn-secondary">Чек на доп.услуги</a>
+        </div>
+    </div>
+</aside>
+
+
+<div class="order-details">
+    <h2>Заказ №102030</h3>
+    <div class="schedule">
+        <div class="departure">
+            <span class="hint">14 мар, пт</span><br>
+            <span class="time">09:30</span><br>
+            <span class="station">Челябинск Областная</span>
+        </div>
+        <div class="arrival">
+            <span class="hint">14 мар, пт</span><br>
+            <span class="time">10:30</span><br>
+            <span class="station">Еткуль</span>
+        </div>
+    </div>
+    <div class="order-items">
+        <div class="row">
+            <span>Пассажирский х1</span>
+            <span>271 ₽</span>
+        </div>
+        <div class="row">
+            <span>Багажный х1</span>
+            <span>99 ₽</span>
+        </div>
+        <div class="row">
+            <span>Оповещение об отмене рейса</span>
+            <span>10 ₽</span>
+        </div>
+        <div class="row">
+            <span>Страхование жизни и здоровья</span>
+            <span>20 ₽</span>
+        </div>
+    </div>
+    <div class="total">
+        <h2>Итого:</h2>
+        <h2>400 ₽</h2>
+    </div>
+</div>
+{% endblock %}
