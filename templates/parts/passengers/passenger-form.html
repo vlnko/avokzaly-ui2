@@ -15,7 +15,7 @@
 
     <div class="form-col">
         <label for="" class="input-label">Гражданство</label>
-        <select name="document" id=document"" class="input-field">
+        <select name="country" id="country" class="input-field">
             <option value="">Ангола</option>
             <option value="">Бразилия</option>
             <option value="">Вануату</option>
@@ -27,7 +27,7 @@
 
     <div class="form-col">
         <label for="document" class="input-label">Документ</label>
-        <select name="document" id=document"" class="input-field">
+        <select name="document" id="document" class="input-field">
             <option value="" selected>Паспорт РФ</option>
             <option value="">Паспорт иностранного гражданина</option>
             <option value="">Свидетельство о рождении</option>
@@ -58,7 +58,7 @@
 <div class="form-row">
     <div class="form-col">
         <label for="" class="input-label">Пол</label>
-        <select name="document" id=document"" class="input-field">
+        <select name="gender" id="gender" class="input-field">
             <option value="">женский</option>
             <option value="" selected>мужской</option>
         </select>
@@ -71,7 +71,7 @@
     <div class="form-col cols2">
         <div>
             <label for="" class="input-label">Место</label>
-            <select name="document" id=document"" class="input-field">
+            <select name="place" id="place" class="input-field">
                 <option value="">1</option>
                 <option value="">2</option>
                 <option value="" selected>3</option>
@@ -82,7 +82,7 @@
         </div>
         <div>
             <label for="" class="input-label">Багаж</label>
-            <select name="document" id=document"" class="input-field">
+            <select name="baggage" id="baggage" class="input-field">
                 <option value="">1</option>
                 <option value="">2</option>
                 <option value="">3</option>
@@ -93,8 +93,14 @@
 </div>
 
 
-
-<div class="insurance-block">
-    <span>Страхование жизни и здоровья на время поездки</span>
+<!-- Включенная страховка -->
+<div class="addservice-block">
+    <span>Страхование жизни и здоровья на время поездки (+15 ₽)</span>
     <span class="btn-action-sm gray">Отказаться</span>
 </div>
+
+<!-- Выключенная страховка -->
+<!-- <div class="addservice-block">
+    <span>Страхование жизни и здоровья на время поездки</span>
+    <span class="btn-action-sm">Добавить</span>
+</div> -->

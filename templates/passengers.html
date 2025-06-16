@@ -28,7 +28,10 @@
         <div class="btn-group">
             <span class="btn-primary"
                 _="on click add .input-error to .pd"
-            >Оплатить по СБП</span>
+            >
+                <img src="{{ url_for('static', filename='sbp-icon.svg') }}" style="height: 1rem;">
+                <span>Оплатить по СБП</span>
+            </span>
             <a href="#" class="btn-secondary">Оплатить по карте</a>
         </div>
         <span class="sub-info">Нажимая кнопку "Оплатить" вы соглашаетесь с условиями и <a href="#">правилами сервиса</a>, а также с <a href="#">условиями страхования</a></span>

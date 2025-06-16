@@ -191,6 +191,9 @@ aside {
     gap: .5rem;
 }
 .btn-primary {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
     text-decoration: none;
     color: white;
     background-color: var(--color-main);
@@ -199,7 +202,6 @@ aside {
     border-radius: .5rem;
     font-weight: 600;
     box-sizing: border-box !important;
-    display: inline-block;
     cursor: pointer;
 }
 .btn-secondary {
@@ -401,7 +403,7 @@ label:has(input[type="checkbox"]) {
 /* #endregion */
 
 /* #region БЛОК СТРАХОВКИ */
-.insurance-block {
+.addservice-block {
     border: 1px solid #e5e5e5;
     padding: 1rem 1rem 1rem 1.5rem;
     border-radius: 1rem;
@@ -410,10 +412,6 @@ label:has(input[type="checkbox"]) {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-}
-.insurance-block * {
-    height: 100%;
-    color: rgba(0,0,0,.7);
 }
 .items-center {
     align-items: center;
@@ -510,7 +508,7 @@ label:has(input[type="checkbox"]) {
         flex-direction: column;
         text-align: center;
     }
-    .insurance-block {
+    .addservice-block {
         padding: 1.5rem 2rem 2rem 2rem;
         margin: 0 -2rem -2rem -2rem;
         border: none;
