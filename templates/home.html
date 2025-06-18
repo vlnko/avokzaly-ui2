@@ -1,11 +1,38 @@
 {% extends 'base.html' %}
 
+{% block styles %}
+<style>
+    li {
+        list-style: none;
+    }
+    ul {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+    ul li a {
+        display: grid;
+        background-color: var(--color-light-blue);
+        border-radius: 1rem;
+        padding: 1rem;
+        place-items: center;
+    }
+    h2 {
+        margin-bottom: 2rem;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-<h3>Pages</h3>
-<ul>
-    <li><a href="/passengers">Страница пассажиров</a></li>
-    <li><a href="/my-tickets">Мои билеты</a></li>
-    <li><a href="/trips">Страница рейсов</a></li>
-    <li><a href="/success">Страница успеха</a></li>
-</ul>
+<div style="width: 100%;">
+    <h2>Страницы</h3>
+    <ul>
+        <li><a href="/passengers">Страница пассажиров</a></li>
+        <li><a href="/my-tickets">Мои билеты</a></li>
+        <li><a href="/trips">Страница рейсов</a></li>
+        <li><a href="/success">Страница успеха</a></li>
+    </ul>
+
+</div>
 {% endblock %}
